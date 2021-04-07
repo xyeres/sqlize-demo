@@ -12,6 +12,6 @@ const db = {
   models: {},
 };
 
-db.models.Movie = require('./models/movie.js')(sequelize);
+db.models.Movie = require('../models/movie')(sequelize);
 
 module.exports = db;
