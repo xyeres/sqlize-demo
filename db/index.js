@@ -2,12 +2,12 @@ const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: 'movies.db',
-    logging: false,
+    storage: './db/movies.db',
+    logging: true,
     // global options
     define: {
-        freezeTableName: true,
-        timestamps: false,
+        freezeTableName: false,
+        timestamps: true,
     },
 });
 
@@ -18,5 +18,6 @@ const db = {
 };
 
 db.models.Movie = require('../models/movie')(sequelize);
+db.models.Person = require('../models/person')(sequelize);
 
 module.exports = db;
